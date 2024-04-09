@@ -1,13 +1,24 @@
+const cookie = require("cookie");
+
 //cookie
 const handler = async (event) => {
-  console.log(event.headers.cookie);
+  const cookieCheck = cookie.parse(event.headers.cookie || "");
+  if (cookieCheck?.petadoption == "") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ success: true }),
+    };
+  }
 
   return {
     statusCode: 200,
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ success: true }),
+    body: JSON.stringify({ success: false }),
   };
 };
 
