@@ -15,9 +15,7 @@ async function start() {
 start();
 
 async function petsArea() {
-  const petsPromise = await fetch(
-    "https://singular-rabanadas-71ac29.netlify.app/.netlify/functions/event"
-  );
+  const petsPromise = await fetch(".netlify/functions/event");
 
   const petsData = await petsPromise.json();
 
