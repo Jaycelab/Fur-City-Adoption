@@ -313,3 +313,21 @@ body {
     padding: 139px 0;
   }
 }
+
+/*Admin Page CSS*/
+.form-field {
+  display: block;
+  width: 100%;
+  /*padding gets added in addition to the full avail width. 24px box-sizing cancels this but does not add additional width*/
+  padding: 10px 12px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  /*inherit overall body element font */
+  font-family: inherit;
+}
+
+.mb-big {
+  margin-bottom: 25px;
+}
