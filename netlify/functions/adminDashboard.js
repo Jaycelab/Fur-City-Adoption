@@ -3,7 +3,7 @@ const cookie = require("cookie");
 //cookie
 const handler = async (event) => {
   const cookieCheck = cookie.parse(event.headers.cookie || "");
-  if (cookieCheck?.petadoption == "") {
+  if (cookieCheck?.petadoption == "asdsaasdsadsf21313asdasdasdsa") {
     return {
       statusCode: 200,
       headers: {
