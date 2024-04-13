@@ -36,7 +36,7 @@ const handler = async (event) => {
 function generateHTML(pets) {
   //looping to generate HTML and adding div tags
   //create new array based from old arr with join method to combine string values rather than an array. Passing func to apply to each arr
-  let ourHTML = `<div class="list-of-pets">`;
+  let ourHTML = `<div class="list-pets">`;
   ourHTML += pets
     .map((pet) => {
       return `<div class="pet-card">
