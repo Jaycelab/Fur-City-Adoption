@@ -2,8 +2,9 @@ const { MongoClient } = require("mongodb");
 
 const cookie = require("cookie");
 
-//cookie
 const handler = async (event) => {
+  //cookie
+
   const cookieCheck = cookie.parse(event.headers.cookie || "");
   if (cookieCheck?.petadoption == "asdsaasdsadsf21313asdasdasdsa") {
     const client = new MongoClient(process.env.CONNECTIONSTRING);
@@ -34,25 +35,28 @@ const handler = async (event) => {
 
 function generateHTML(pets) {
   //looping to generate HTML and adding div tags
-  let ourHTML = `<div class="list-of-pets">`;
   //create new array based from old arr with join method to combine string values rather than an array. Passing func to apply to each arr
-  ourHTML += pets.map();
-  //returning pet database
+  let ourHTML = `<div class="list-of-pets">`;
   ourHTML += pets
     .map((pet) => {
       return `<div class="pet-card">
-    <div class="pet-card-text">
-      <h3>${pet.name}</h3>
-      <p class="pet-description">${pet.description}</p>
-     </div>
-    
-     <div class="pet-card-photo">
-      <img src="/img/fallback.jpg" alt="A ${pet.species} named ${pet.name}" />
-    </div>
-  </div>`;
+      <div class="pet-card-text">
+        <h3>${pet.name}</h3>
+        <p class="pet-description">${pet.description}</p>
+        
+        <div class="action-buttons">
+          <a class="action-btn" href="#">Edit</a>
+          <button class="action-btn">Delete</button>
+        </div>
+      </div>
+      <div class="pet-card-photo">
+        <img src="/images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
+      </div>
+    </div>`;
     })
     .join("");
   ourHTML += "</div>";
+  return ourHTML;
 }
 
 module.exports = { handler };

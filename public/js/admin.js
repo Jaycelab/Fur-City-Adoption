@@ -1,10 +1,11 @@
 async function start() {
-  const callPromise = await fetch("/.netlify/functions/adminDashboard");
-  const petData = await callPromise.json();
+  const ourPromise = await fetch("/.netlify/functions/adminDashboard");
+  const ourData = await ourPromise.json();
 
-  if (petData.success) {
+  if (ourData.success) {
+    console.log(ourData);
+    document.querySelector("#render-here").innerHTML = ourData.pets;
   } else {
-    //redirect users to login page
     window.location = "/login";
   }
 }
