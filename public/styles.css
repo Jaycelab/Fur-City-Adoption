@@ -351,3 +351,24 @@ small-link {
   position: relative;
   z-index: 3;
 }
+
+.action-btn {
+  text-decoration: none;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 10px 0 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #0b1996;
+}
+
+.action-btn:last-child {
+  margin-right: 0;
+}
+
+.action-btn:hover {
+  color: #2030bc;
+  text-decoration: underline;
+}
