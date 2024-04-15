@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Furry Center Adoption</title>
-    <link rel="stylesheet" href="/public/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
 
@@ -12,18 +12,18 @@
     <!--Section Start-->
     <section class="page-section">
       <div class="page-section-inner">
-        <a class="small-link" href="/admin">&laquo; Back to Dashboard</a>
+        <a class="small-link" href="/admin">&laquo;Back to Dashboard</a>
         <h2 class="page-section-title mb-big ">Add New Pet</h2>
     
-        <form id="add-net-pet-form">
+        <form id="add-new-pet-form">
           <!--Centers the cursor to focus-->
-          <input autofocus autocomplete="off" class="form-field" type="text" id="name" placeholder="Pet Name" />
+          <input autofocus autocomplete="off" class="form-field" type="text" id="name" placeholder="Pet name">
           <input class="form-field" type="text" id="birthYear" placeholder="Year born (e.g. 2019)">
+          <select class="form-field" id="species">
 
           <!--Species filter-->
-          <select class="form-field" id="species">
-            <option >Dog</option>
-            <option >Cat</option>
+          <option>Dog</option>
+          <option>Cat</option>
           </select>
 
           <!--Text area-->
@@ -44,7 +44,8 @@
       <p>FCA &copy;2024 Furry Center Adoption. All rights reserved</p>
     </footer>
 
-    <script src="../js/logout.js"></script>
-    <script src="../js/clientAddPet.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/clientAddPet.js"></script>
+  
   </body>
 </html>
