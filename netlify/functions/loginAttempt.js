@@ -14,8 +14,8 @@ const handler = async (event) => {
         httpOnly: true,
         path: "/",
         sameSite: "strict",
-        //measured in ms
-        maxAge: 1000 * 60 * 60 * 24,
+        //measured in seconds. 60 seconds , 60 minutes, 24 hours
+        maxAge: 60 * 60 * 24,
       }
     );
 

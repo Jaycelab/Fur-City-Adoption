@@ -339,7 +339,11 @@ body {
   /*inherit overall body element font */
   font-family: inherit;
 }
-
+/*targeting textarea only fields. no resizing */
+textarea.form-field {
+  height: 150px;
+  resize: none;
+}
 .mb-big {
   margin-bottom: 25px;
 }
