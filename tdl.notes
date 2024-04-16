@@ -8,6 +8,6 @@
 - deployment
 
 *FIX*
-- <s>fix dynamic pet database html <s>
-- fix grid layout manage section 
+- fix fallback images
+- fix add pet json parse
 - adjust overal blue shade background
