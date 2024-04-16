@@ -17,7 +17,7 @@ const handler = async (event) => {
 
     return {
       statusCode: 200,
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ success: true, pets: petsHTML }),
@@ -26,7 +26,7 @@ const handler = async (event) => {
 
   return {
     statusCode: 200,
-    header: {
+    headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ success: false }),
@@ -50,7 +50,7 @@ function generateHTML(pets) {
         </div>
       </div>
       <div class="pet-card-photo">
-        <img src="/images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
+        <img src="/public/images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
       </div>
     </div>`;
     })
