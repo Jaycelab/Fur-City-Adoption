@@ -20,9 +20,10 @@ document
       body: JSON.stringify(pet),
     });
 
-    const theResponse = await ourPromise.json();
+    const response = await ourPromise.json();
 
-    if (theResponse.success) {
+    //redirects to admin if addpet is successful
+    if (response.success) {
       window.location = "/admin";
     }
   });

@@ -33,7 +33,7 @@ const handler = async (event) => {
 
   return {
     statusCode: 200,
-    headers: {
+    header: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ success: false }),

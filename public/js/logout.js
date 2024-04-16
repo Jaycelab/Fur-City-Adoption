@@ -3,3 +3,4 @@ document.querySelector("#logout").addEventListener("click", async function () {
 
   window.location = "/";
 });
+ 
