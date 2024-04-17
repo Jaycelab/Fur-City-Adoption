@@ -2,8 +2,7 @@ const getClient = require("../../lib/getClient");
 
 const handler = async () => {
   //reusable func to get access to database client
-  const client = await getClient();
-
+  const client = await getClient(); 
   const pets = await client.db().collection("pets").find().toArray();
   client.close();
 

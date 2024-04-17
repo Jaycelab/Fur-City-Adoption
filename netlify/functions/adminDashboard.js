@@ -50,7 +50,7 @@ function generateHTML(pets) {
         </div>
       </div>
       <div class="pet-card-photo">
-        <img src="/public/images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
+        <img src="../images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
       </div>
     </div>`;
     })
