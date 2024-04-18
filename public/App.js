@@ -25,7 +25,7 @@ async function petsArea() {
     //create clone of pet card html.
     const clone = template.content.cloneNode(true);
 
-    //pet-card area
+    //pet-card area. textContent over innerHTML to apply escape
     clone.querySelector("h3").textContent = pet.name;
     clone.querySelector(".pet-description").textContent = pet.description;
 

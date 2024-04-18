@@ -1,3 +1,4 @@
+const escape = require("escape-html");
 const { MongoClient } = require("mongodb");
 const isAdmin = require("../../lib/isAdmin");
 
@@ -36,13 +37,15 @@ const handler = async (event) => {
 function generateHTML(pets) {
   //looping to generate HTML and adding div tags
   //create new array based from old arr with join method to combine string values rather than an array. Passing func to apply to each arr
+  //using escape to escape any unfiltered js scripts
+  //converts any symbols to text character
   let ourHTML = `<div class="list-pets">`;
   ourHTML += pets
     .map((pet) => {
       return `<div class="pet-card">
       <div class="pet-card-text">
-        <h3>${pet.name}</h3>
-        <p class="pet-description">${pet.description}</p>
+        <h3>${escape(pet.name)}</h3>
+        <p class="pet-description">${escape(pet.description)}</p>
         
         <div class="action-buttons">
           <a class="action-btn" href="#">Edit</a>
@@ -50,7 +53,9 @@ function generateHTML(pets) {
         </div>
       </div>
       <div class="pet-card-photo">
-        <img src="../images/fallback.jpg" alt="A ${pet.species} named ${pet.name}">
+        <img src="../images/fallback.jpg" alt="A ${escape(
+          pet.species
+        )} named ${escape(pet.name)}">
       </div>
     </div>`;
     })
