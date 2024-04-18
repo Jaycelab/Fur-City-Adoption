@@ -8,6 +8,5 @@
 - deployment
 
 *FIX*
-- fix fallback images
-- fix add pet json parse
+- Fix edit pet form 
 - adjust overal blue shade background

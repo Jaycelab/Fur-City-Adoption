@@ -22,7 +22,7 @@ document
 
     const response = await ourPromise.json();
 
-    //redirects to admin if addpet is successful
+    //redirects to admin if add pet is successful
     if (response.success) {
       window.location = "/admin";
     }

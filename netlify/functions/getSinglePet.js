@@ -6,7 +6,7 @@ const cookie = require("cookie");
 
 const handler = async (event) => {
   //cookie
-  //removing parsecheck and if statement using reusable func below
+  //removing parse check and if statement using reusable func below
   if (isAdmin(event)) {
     const body = JSON.parse(event.body);
 
@@ -29,6 +29,12 @@ const handler = async (event) => {
       .collection("pets")
       .findOne({ _id: new ObjectId(body.id) });
     client.close();
+
+    //modifying pet props
+    pet.name = escape(pet.name);
+    pet.birthYear = escape(pet.birthYear);
+    pet.species = escape(pet.species);
+    pet.description = escape(pet.description);
 
     return {
       statusCode: 200,
