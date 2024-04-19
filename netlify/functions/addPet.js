@@ -15,7 +15,15 @@ function cleanUp(san) {
 //parsing data into json object
 const handler = async (event) => {
   const body = JSON.parse(event.body);
-  //logs json parse
+
+  //visitor submit data check only strings, eg no object, func to name or description field
+  if (typeof body.name != "string") {
+    body.name = "";
+  }
+
+  if (typeof body.description != "string") {
+    body.description = "";
+  }
 
   //validation for default object property
   let pet = {

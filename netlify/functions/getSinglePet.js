@@ -1,8 +1,7 @@
 const escape = require("escape-html");
-const { MongoClient, ObjectId } = require("mongodb");
+const { ObjectId } = require("mongodb");
+const getClient = require("../../lib/getClient");
 const isAdmin = require("../../lib/isAdmin");
-
-const cookie = require("cookie");
 
 const handler = async (event) => {
   //cookie
@@ -20,8 +19,7 @@ const handler = async (event) => {
       };
     }
 
-    const client = new MongoClient(process.env.CONNECTIONSTRING);
-    await client.connect();
+    const client = await getClient();
 
     //tracks incoming id HTML
     const pet = await client

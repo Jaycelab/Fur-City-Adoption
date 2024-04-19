@@ -1,16 +1,11 @@
 const escape = require("escape-html");
-const { MongoClient } = require("mongodb");
+const getClient = require("../../lib/getClient");
 const isAdmin = require("../../lib/isAdmin");
 
-const cookie = require("cookie");
-
 const handler = async (event) => {
-  //cookie
   //removing parsecheck and if statement using reusable func below
   if (isAdmin(event)) {
-    const client = new MongoClient(process.env.CONNECTIONSTRING);
-    await client.connect();
-
+    const client = await getClient();
     const pets = await client.db().collection("pets").find().toArray();
     client.close();
 
