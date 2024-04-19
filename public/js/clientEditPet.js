@@ -38,9 +38,7 @@ document
       description: document.querySelector("#description").value,
     };
 
-    document
-      .querySelector("#add-new-pet-form")
-      .classList.add("form-is-loading");
+    document.querySelector("#edit-pet-form").classList.add("form-is-loading");
 
     const ourPromise = await fetch("/.netlify/functions/saveChanges", {
       method: "POST",

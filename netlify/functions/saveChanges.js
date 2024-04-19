@@ -39,7 +39,7 @@ const handler = async (event) => {
 
   if (isAdmin(event)) {
     //saving into database
-    if (ObjectId.isValid(body.id)) {
+    if (!ObjectId.isValid(body.id)) {
       return {
         statusCode: 200,
         header: { "Content-Type": "application/json" },
