@@ -36,7 +36,7 @@ async function petsArea() {
     clone.querySelector(".pet-card").dataset.species = pet.species;
 
     //fallback photo
-    if (!pet.photo) pet.photo = "img/fallback.jpg";
+    if (!pet.photo) pet.photo = "images/fallback.jpg";
 
     //photo card
     clone.querySelector(".pet-card-photo img").src = pet.photo;
