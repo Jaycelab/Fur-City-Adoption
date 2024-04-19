@@ -1,12 +1,10 @@
 *TDL* 
-- pet management
 - user pet upload
 - contact form
 - chat room, questions, etc
 - styling , responsiveness
-- create new database, rest api
 - deployment
 
 *FIX*
-- Fix edit pet form (fixed)
+- Fix logout link (no hover)
 - adjust overall blue shade background
