@@ -21,6 +21,10 @@ async function getEditPet() {
   document.querySelector("#birthYear").value = pet.birthYear;
   document.querySelector("#species").value = pet.species;
   document.querySelector("#description").value = pet.description;
+
+  //removes loading screen and focuses name field once data has been entered
+  document.querySelector("#edit-pet-form").classList.remove("form-is-loading");
+  document.querySelector("#name").focus();
 }
 
 getEditPet();
