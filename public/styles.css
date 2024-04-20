@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;1,200&display=swap");
 
 body,
 html {
@@ -13,7 +13,10 @@ html {
 }
 
 body {
-  font-family: "Source Sans", "Roboto", "Open Sans", Courier, sans-serif;
+  font-family: "Source Sans 3", sans-serif, Arial;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
   /*font-optical-sizing: auto;
   font-style: normal;*/
 }
@@ -183,7 +186,10 @@ body {
   /*remove default css properties for button*/
   background-color: transparent;
   border: none;
-  font-family: "Source Sans", "Roboto", "Open Sans", Courier, sans-serif;
+  font-family: "Source Sans 3", sans-serif, Arial;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
   font-size: 1.15rem;
   cursor: pointer;
 }
