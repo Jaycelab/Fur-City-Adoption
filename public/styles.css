@@ -215,8 +215,15 @@ body {
   font-family: inherit;
   background-color: transparent;
   border: none;
-  text-decoration: underline;
+  padding-bottom: 2px;
+  font-size: 18px;
   color: #a6a6a6;
+  cursor: pointer;
+}
+
+.footer .logout-text button:hover {
+  color: #6d6c6c;
+  text-decoration: underline;
 }
 /*overall grid layout*/
 .list-pets {
