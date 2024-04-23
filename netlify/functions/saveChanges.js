@@ -1,7 +1,15 @@
 const { ObjectId } = require("mongodb");
+const cloudinary = require("cloudinary").v2;
 const sanitizeHtml = require("sanitize-html");
 const getClient = require("../../lib/getClient");
 const isAdmin = require("../../lib/isAdmin");
+
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: "dysnlfeaw",
+  api_key: "215643187696965",
+  api_secret: process.env.CLOUDINARYSECRET,
+  secure: true,
+});
 
 //sanitize HTML func
 function cleanUp(san) {
@@ -43,6 +51,15 @@ const handler = async (event) => {
   //validates species , fallback to dog
   if (pet.species != "cat" && pet.species != "dog") {
     pet.species = "dog";
+  }
+  
+  // Predicts what signature would be by passing api_secret on server side
+  const expectedSignature = cloudinary.utils.api_sign_request(
+    { public_id: body.public_id, version: body.version },
+    cloudinaryConfig.api_secret
+  );
+  if (expectedSignature === body.signature) {
+    pet.photo = body.public_id;
   }
 
   if (isAdmin(event)) {

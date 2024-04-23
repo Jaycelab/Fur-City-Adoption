@@ -3,10 +3,17 @@ document
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
+    if (isFormLocked) {
+      //null will prevent function from running
+      return null;
+    }
+
+    isFormLocked = true;
+
     const pet = {
       name: document.querySelector("#name").value,
       birthYear: document.querySelector("#birthYear").value,
-      species: document.querySelector ("#species").value,
+      species: document.querySelector("#species").value,
       description: document.querySelector("#description").value,
     };
 

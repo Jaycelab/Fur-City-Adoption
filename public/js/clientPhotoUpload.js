@@ -1,6 +1,7 @@
 let serverTimestamp;
 let serverSignature;
 let cloudinaryReturnedObject;
+let isFormLocked = false;
 
 async function getSignature() {
   const signaturePromise = await fetch("/.netlify/functions/getSignature");
@@ -17,7 +18,12 @@ getSignature();
 //a - event to add, b - what to do
 document
   .querySelector("#file-field")
+
   .addEventListener("change", async function () {
+    //form locked. button will be locked/10%  visible
+    isFormLocked = true;
+    document.querySelector("#submit-btn").style.opacity = ".1";
+
     //new instance form data to upload bits of data rather than text
     const data = new FormData();
     //what to upload, a - type, b - value
@@ -49,4 +55,7 @@ document
     //dynamically uploading photo via cloud and using DOM to apply css attributes using public ID as selector
     document.querySelector("#photo-preview").innerHTML = `<img
     src="https://res.cloudinary.com/dysnlfeaw/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
+
+    isFormLocked = false;
+    document.querySelector("#submit-btn").style.opacity = "1";
   });

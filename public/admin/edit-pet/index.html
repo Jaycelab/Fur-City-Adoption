@@ -27,8 +27,15 @@
           </select>
 
           <!--Text area-->
-          <textarea class="form-field" id="description" placeholder="description..."></textarea>
+          <textarea class="form-field" id="description" placeholder="Description..."></textarea>
+          
+          <!--Upload Pet Photo using file type-->
+          <input type="file" class="form-field" id="file-field">
+          
 
+          <!--To target JS photo preview -->
+          <div id="photo-preview">Preview</div>
+          
           <!--Pet Description-->
           <button id="submit-btn" class="our-btn">Save Changes</button>
         </form>
@@ -46,6 +53,8 @@
 
     <script src="/js/logout.js"></script>
     <script src="/js/clientEditPet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/clientPhotoUpload.js"></script>
   
   </body>
 </html>
