@@ -36,7 +36,11 @@ async function petsArea() {
     clone.querySelector(".pet-card").dataset.species = pet.species;
 
     //fallback photo
-    if (!pet.photo) pet.photo = "images/fallback.jpg";
+    if (!pet.photo) {
+      pet.photo = "/images/fallback.jpg";
+    } else {
+      pet.photo = `https://res.cloudinary.com/dysnlfeaw/image/upload/w_330,h_392,c_fill/${pet.photo}.jpg`;
+    }
 
     //photo card
     clone.querySelector(".pet-card-photo img").src = pet.photo;
