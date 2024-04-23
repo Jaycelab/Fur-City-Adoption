@@ -14,7 +14,7 @@
       <div class="page-section-inner">
         <a class="small-link" href="/admin">&laquo;Back to Dashboard</a>
         <h2 class="page-section-title mb-big ">Add New Pet</h2>
-    
+     
         <form id="add-new-pet-form">
           <!--Centers the cursor to focus-->
           <input autofocus autocomplete="off" class="form-field" type="text" id="name" placeholder="Pet name">
@@ -28,6 +28,13 @@
 
           <!--Text area-->
           <textarea class="form-field" id="description" placeholder="Description..."></textarea>
+
+          <!--Upload Pet Photo using file type-->
+          <input type="file" class="form-field" id="file-field">
+          
+
+          <!--To target JS photo preview -->
+          <div id="photo-preview">Preview</div>
 
           <!--Pet Description-->
           <button id="submit-btn" class="our-btn">Add New Pet</button>
@@ -44,8 +51,12 @@
       <p>FCA &copy;2024 Fur City Adoption. All rights reserved</p>
     </footer>
 
+    
     <script src="/js/logout.js"></script>
     <script src="/js/clientAddPet.js"></script>
-  
+    <!--Axious-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/clientPhotoUpload.js"></script>
+    
   </body>
 </html>
