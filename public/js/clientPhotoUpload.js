@@ -1,5 +1,6 @@
 let serverTimestamp;
 let serverSignature;
+let cloudinaryReturnedObject;
 
 async function getSignature() {
   const signaturePromise = await fetch("/.netlify/functions/getSignature");
@@ -42,7 +43,10 @@ document
     //test display object data
     console.log(cloudinaryResponse.data);
 
-    //targeting dynamic through DOM and applying attributes using variable and public id method
+    // Gives access to client add pet script
+    cloudinaryReturnedObject = cloudinaryResponse.data;
+
+    //dynamically uploading photo via cloud and using DOM to apply css attributes using public ID as selector
     document.querySelector("#photo-preview").innerHTML = `<img
     src="https://res.cloudinary.com/dysnlfeaw/image/upload/w_190,h_190,c_fill/${cloudinaryResponse.data.public_id}.jpg"/>`;
   });
