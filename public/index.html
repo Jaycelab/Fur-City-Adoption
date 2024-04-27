@@ -197,6 +197,56 @@
     <footer class="footer">
       <p>FCA &copy;2024 Fur City Adoption. All rights reserved</p>
     </footer>
+
+    <!--Contact form overlay start -->
+    <!--Hover overlay default to hidden. Style display none -->
+    <div class="form-overlay" style="display: none">
+      <div class="form-overlay-inner">
+        <form class="form-content">
+          <input
+            type="text"
+            placeholder="Name"
+            id="name"
+            autocomplete="off"
+            class="form-field"
+          />
+          <input
+            type="text"
+            placeholder="Email Address"
+            id="email"
+            autocomplete="off"
+            class="form-field"
+          />
+          <input
+            type="text"
+            placeholder="Contact Number"
+            id="number"
+            autocomplete="off"
+            class="form-field"
+          />
+          <textarea
+            id="comment"
+            class="form-field"
+            placeholder="Comments (optional)"
+          ></textarea>
+          <!--X close button-->
+          <div class="justify-right">
+            <button class="our-btn">Submit</button>
+          </div>
+          <div class="close-form-overlay">x</div>
+        </form>
+        <!--Form photo display-->
+        <div class="form-photo">
+          <img src="/images/fallback.jpg" />
+          <p>Thank you for your interest in <strong>Barksalot</strong>.</p>
+        </div>
+        <!--Thank you -->
+        <div class="thank-you"></div>
+      </div>
+    </div>
+
+    <!--Contact form overlay end -->
+
     <script src="./App.js"></script>
   </body>
 </html>

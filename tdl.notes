@@ -1,8 +1,14 @@
 *TDL* 
 - contact form
+- hover photo + info section
+- migrate to express backend**
+- deploy to wordpress and/or vercel
 - chat room, questions, etc
-- work on database, default photos , pets etc
+- convert pet section dynamically with netlify ejs backend
 
 *FIX*
+- add svg to name dynamically
+- back button. make cursor have more area to click. possible border issue
 - adjust overall blue shade background
 - add additional pages**
+
