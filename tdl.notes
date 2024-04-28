@@ -4,7 +4,7 @@
 - migrate to express backend**
 - deploy to wordpress and/or vercel
 - chat room, questions, etc
-- convert pet section dynamically with netlify ejs backend
+- convert pet section dynamically with cloudinary ejs backend
 
 *FIX*
 - add svg to name dynamically
