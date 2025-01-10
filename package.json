@@ -1,0 +1,19 @@
+{
+  "name": "adoption-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^2.1.0",
+    "cookie": "^0.7.0",
+    "escape-html": "^1.0.3",
+    "mongodb": "^6.5.0",
+    "sanitize-html": "^2.13.0"
+  }
+}

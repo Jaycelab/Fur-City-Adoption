@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/*smooths scroll transition when linking href section*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif, Arial;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  /*font-optical-sizing: auto;
+  font-style: normal;*/
+}
+
+.top-section-wrapper {
+  overflow: hidden;
+  background-color: #04070a;
+  padding: 0 16px;
+}
+.top-section {
+  /*Relative position */
+  color: white;
+  padding: 80px 0px;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.top-section h1 {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 97.3%;
+  max-width: 525px;
+}
+
+/*if  > 600px apply props. Does not affect smaller sized screens*/
+.intro-text p {
+  font-size: 1.25rem;
+  line-height: 169.3%;
+  margin: 1rem 0;
+  max-width: 436px;
+}
+
+.intro-buttons {
+  margin-bottom: 70px;
+}
+
+/*Buttons defaults to inline elements and not block elements. */
+.our-btn {
+  font-weight: 600;
+  display: inline-block;
+  font-size: 1.126rem;
+  background-color: #0b1996;
+  /*Adding border to match the second outline btn */
+  border: 2px solid #0b1996;
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 1000px;
+  /*transitions the background to slowly fade out*/
+  transition: background-color 0.7s ease-out, border 0.3s ease-out,
+    color 0.5s ease-out;
+}
+
+/*psuedo selector when being hovered*/
+.our-btn:hover {
+  background-color: #01041f;
+  /*Adding border to match the second outline btn */
+  border: 2px solid #01041f;
+}
+
+.utility-mr {
+  margin-right: 10px;
+}
+
+.our-btn--outline {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.our-btn--outline:hover {
+  background-color: rgb(245, 245, 245);
+  color: #0b1996;
+  /*maintains the border radius when hovered*/
+  border: 2px solid white;
+}
+
+.intro-feature {
+  border: 3px solid rgba(255, 255, 255, 0.24);
+  padding: 33px 25px;
+}
+
+.intro-feature p {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.intro-feature h2 {
+  font-size: 1.5rem;
+  margin: 31px 0 3px 0;
+}
+
+/*row gap on the card container to add spacing for different screens*/
+.intro-features {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+/*display and column-gap carried from first media query above*/
+@media screen and (min-width: 580px) {
+  .intro-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .intro-features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.circle-right {
+  width: 617px;
+  height: 617px;
+  background-color: #4b1e46;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+  /*Content is absolute to the top section relative position rather than the default top display*/
+  position: absolute;
+  top: 62px;
+  right: -390px;
+}
+
+.circle-top {
+  width: 617px;
+  height: 617px;
+  background-color: #6079ff;
+  opacity: 0.85;
+  border-radius: 50%;
+  filter: blur(150px);
+  /*Content is absolute to the top section relative position rather than the default top display*/
+  position: absolute;
+  top: -365px;
+  left: -123px;
+}
+
+.top-content {
+  z-index: 5;
+  position: relative;
+}
+
+.page-section {
+  background-color: #fff;
+  padding: 70px 16px;
+  /*border: 1px solid red;*/
+}
+
+.page-section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.page-section-title {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.pet-filter {
+  color: #9f9f9f;
+  font-size: 1.15rem;
+}
+
+.pet-filter button {
+  /*remove default css properties for button*/
+  background-color: transparent;
+  border: none;
+  font-family: "Source Sans 3", sans-serif, Arial;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.pet-filter button:hover {
+  color: #7d7d7d;
+}
+
+/*active filter*/
+.pet-filter .active,
+.pet-filter .active:hover {
+  color: #475aff;
+  text-decoration: underline;
+}
+
+.footer p {
+  text-align: center;
+  color: #a6a6a6;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0 0 65px 0;
+}
+
+.footer .logout-text {
+  padding: 0;
+}
+
+.footer .logout-text button {
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  padding-bottom: 2px;
+  font-size: 18px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+
+.footer .logout-text button:hover {
+  color: #6d6c6c;
+  text-decoration: underline;
+}
+/*overall grid layout*/
+.list-pets {
+  display: grid;
+
+  /*use auto fit for how many times to repeat
+    minmax to set the min and max. This eliminates the need for a media query 
+    for props below*/
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  column-gap: 34px;
+  row-gap: 16px;
+}
+
+/*individual pet card grid layout*/
+.pet-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  border-radius: 20px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.08);
+}
+
+/*Setting order priority to 1 to unwrap photo to text. Grid-row 1 to take into effect*/
+.pet-card-photo {
+  order: 1;
+  grid-row: 1;
+}
+
+/*display block to prevent unwanted line spaces around the image
+   object-fit:cover zooms in photo to take up container without distorting img*/
+
+.pet-card-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-card-text {
+  padding: 18px 16px;
+}
+
+.pet-card-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.63rem;
+  font-weight: 600;
+}
+
+.pet-description {
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  color: #626262;
+  line-height: 150%;
+}
+
+.pet-age {
+  color: #a2a2a2;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .pet-description {
+    font-size: 1rem;
+  }
+
+  .pet-card {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .pet-card-text {
+    padding: 21px 29px;
+  }
+
+  .list-pets {
+    row-gap: 28px;
+  }
+
+  .pet-filter {
+    font-size: 1.375rem;
+  }
+
+  .pet-filter button {
+    font-size: 1.375rem;
+  }
+
+  .page-section-title {
+    font-size: 5.32em;
+  }
+
+  .page-section {
+    padding: 130px 16px;
+    /*border: 1px solid red;*/
+  }
+
+  .intro-buttons {
+    margin-bottom: 129px;
+  }
+
+  .top-section h1 {
+    font-size: 6.25rem;
+  }
+
+  .top-section {
+    padding: 139px 0;
+  }
+}
+
+/*Admin Page CSS*/
+.form-field {
+  display: block;
+  width: 100%;
+  /*padding gets added in addition to the full avail width. 24px box-sizing cancels this but does not add additional width*/
+  padding: 10px 12px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  /*inherit overall body element font */
+  font-family: inherit;
+}
+/*targeting textarea only fields. no resizing */
+textarea.form-field {
+  height: 150px;
+  resize: none;
+}
+.mb-big {
+  margin-bottom: 25px;
+}
+
+small-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #999;
+  position: relative;
+  z-index: 3;
+}
+
+.action-btn {
+  text-decoration: none;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 10px 0 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #0b1996;
+}
+
+.action-btn:last-child {
+  margin-right: 0;
+}
+
+.action-btn:hover {
+  color: #2030bc;
+  text-decoration: underline;
+}
+
+.add-pet-btn {
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  padding: 13px 18px;
+  margin: 0 0 30px 0;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgb(19, 130, 19);
+}
+
+.add-pet-btn svg {
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.add-pet-btn:hover {
+  background-color: rgb(17, 102, 17);
+}
+
+.still-loading .pet-card-photo,
+.still-loading .pet-card-text {
+  opacity: 0;
+}
+
+.still-loading .pet-card {
+  background-color: #b9b9b9;
+}
+
+@keyframes loadingFlash {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.still-loading {
+  /*reference property above*/
+  animation: 0.6s loadingFlash ease-in alternate infinite;
+}
+
+.form-is-loading .form-field {
+  background-color: #b9b9b9;
+  color: #b9b9b9;
+  border: 1px solid #b9b9b9;
+}
+
+.form-is-loading .form-field::placeholder {
+  color: #b9b9b9;
+}
+
+.form-is-loading {
+  /*loading form on edit screen*/
+  animation: 0.6s loadingFlash ease-in alternate infinite;
+}
+
+/*contact form styling*/
+.form-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  /*position fixed to cover the entire screen*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-overlay-inner {
+  max-width: 880px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  margin: 16px;
+  /*grow, shrink, basis shortcut set to 1*/
+  flex: 1;
+  /*centered x,y axis*/
+  align-self: center;
+  /*grid layout to center and hover pet*/
+  display: grid;
+  grid-template-columns: 340px 1fr;
+}
+
+.form-photo {
+  /*prioritize photo form */
+  order: 1;
+  grid-row: 1;
+  position: relative;
+}
+
+/*absoulute text for photo image */
+.form-photo p {
+  line-height: 1.2;
+  font-size: 0.9375rem;
+  color: #555;
+  position: absolute;
+  margin: 0;
+  padding: 16px 25px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.63);
+  backdrop-filter: blur(2px);
+}
+
+/*strong tag within p tag*/
+.form-photo p strong {
+  color: #000;
+  font-size: 2.25rem;
+  font-weight: normal;
+  display: block;
+}
+
+/*block image to fit container form*/
+.form-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /*object fit to crop within grid*/
+  object-fit: cover;
+}
+
+/*Form submit btn aligned to right within own flex box*/
+.justify-right {
+  display: flex;
+  justify-content: end;
+}
+
+/*Relative to have x close button absolute to become frame of reference*/
+.form-content {
+  padding: 38px 54px;
+  position: relative;
+}
+
+/*absolute positioning. Relative */
+.close-form-overlay {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: rgba(0, 0, 0, 0.41);
+  font-size: 2.25rem;
+  /*scales only x axis, 1.2 = 20% wider*/
+  transform: scaleX(1.2);
+}
