@@ -1,6 +1,16 @@
 *TDL* 
 - FIX MONGO DB DATABASE/ CLODINARY LINK***********
 
+◈ Function event has returned an error: bad auth : authentication failed
+    at Connection.sendCommand (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\connection.js:281:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\connection.js:304:26)
+    at async continueScramConversation (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\auth\scram.js:131:15)
+    at async executeScram (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\auth\scram.js:80:5)
+    at async performInitialHandshake (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\connect.js:101:13)
+    at async connect (C:\Users\Jayce\Desktop\Fur-City-Adoption-main\node_modules\mongodb\lib\cmap\connect.js:19:9)
+
+
 - contact form
 - hover photo + info section
 - migrate to express backend**
